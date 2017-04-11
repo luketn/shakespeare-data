@@ -1,15 +1,17 @@
 {
   "name": "shakespeare-data",
-  "version": "1.0.0",
+  "version": "0.0.0-development",
   "description": "A little JavaScript library you can import and use in your projects as an alternative to Lorem Ipsum style test data.",
   "main": "src/index.js",
   "scripts": {
     "commit": "git-cz",
-    "test": "mocha src/index.test.js -w"
+    "test": "mocha src/index.test.js -w",
+    "test-single": "mocha src/index.test.js",
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/luketn/shakespeare-data.git"
+    "url": "https://github.com/luketn/shakespeare-data.git"
   },
   "keywords": [
     "shakespeare"
@@ -25,7 +27,7 @@
     "commitizen": "2.9.6",
     "cz-conventional-changelog": "2.0.0",
     "mocha": "3.2.0",
-    "semantic-release": "^4.2.1"
+    "semantic-release": "^6.3.2"
   },
   "config": {
     "commitizen": {
