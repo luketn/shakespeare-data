@@ -1,5 +1,6 @@
 var expect = require('chai').expect;
 var shakespeareData = require('./index');
+var _ = require('underscore');
 
 describe('shakespeareData', function () {
     describe('sonnets', function () {
@@ -16,6 +17,26 @@ describe('shakespeareData', function () {
                     return line instanceof String;
                 });
             }
+        })
+    })
+    describe('find', function () {
+        it('should return an array of sonnets matching the term', function () {
+            var sonnets = shakespeareData.find('truth');
+            expect(sonnets instanceof Array).to.be.true;
+            expect(sonnets.length > 0).to.be.true;
+
+            _.each(sonnets, (sonnet) => {
+                var truthLine = _.find(sonnet.lines, (line) => {
+                    var lowerLine = line.toLowerCase();
+                    if (lowerLine.indexOf('truth') != -1) {
+                        return true;
+                    } else {
+                        return false;
+                    }
+                });
+                expect(truthLine).to.be.a('string');
+            });
+            
         })
     })
 });
