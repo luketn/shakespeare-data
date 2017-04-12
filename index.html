@@ -15,7 +15,7 @@
 <body>
     <div class="section no-pad-bot">
         <div class="container">
-            <h1 class="header center orange-text">Shakespeare's Sonnets!</h1>
+            <h1 class="header center orange-text">Shakespeare's Beautiful Sonnets!</h1>
         </div>
     </div>
     <div class="container">
@@ -39,7 +39,7 @@
 
             const e = React.createElement;
 
-            const sonnetItems = shakespeare.sonnets.all().map((sonnet) => {
+            const sonnetItems = shakespeare.sonnets.find('beauty').map((sonnet) => {
                 const lineItems = sonnet.lines.map((line) => e('li', null, line));
                 return e('li', null, e('h2', null, 'Sonnet #' + sonnet.number), e('ul', null, lineItems));
             });
