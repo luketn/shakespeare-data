@@ -3,9 +3,9 @@ var shakespeareData = require('./index');
 var _ = require('underscore');
 
 describe('shakespeareData', function () {
-    describe('sonnets', function () {
+    describe('sonnets.all()', function () {
         it('should contain an array of sonnet objects', function () {
-            var sonnets = shakespeareData.sonnets();
+            var sonnets = shakespeareData.sonnets.all();
             expect(sonnets instanceof Array).to.be.true;
 
             for (i = 1; i < sonnets.length+1; i++) {
@@ -19,9 +19,9 @@ describe('shakespeareData', function () {
             }
         })
     })
-    describe('find', function () {
+    describe('sonnets.find(term)', function () {
         it('should return an array of sonnets matching the term', function () {
-            var sonnets = shakespeareData.find('truth');
+            var sonnets = shakespeareData.sonnets.find('truth');
             expect(sonnets instanceof Array).to.be.true;
             expect(sonnets.length > 0).to.be.true;
 
