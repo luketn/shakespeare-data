@@ -1,5 +1,5 @@
 import Sonnets from './data/sonnets';
 
-module.exports = {
+export = {
     sonnets: new Sonnets()
 };
