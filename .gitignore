@@ -38,4 +38,7 @@ jspm_packages
 
 .DS_Store
 todo.txt
-test.js
+
+# Javascript
+dist
+*.tgz

@@ -1,5 +1,5 @@
 var expect = require('chai').expect;
-var shakespeareData = require('./index');
+var shakespeareData = require('../dist/index');
 var _ = require('underscore');
 
 describe('shakespeareData', function () {

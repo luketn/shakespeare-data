@@ -1,0 +1,4 @@
+.travis.yml
+.npmignore
+test
+*.tgz

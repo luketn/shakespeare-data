@@ -1,3 +1,9 @@
+export interface Sonnet {
+    number:Number,
+    lines:String[]
+}
+
+const Sonnets:Sonnet[] =
 [
     {
         "number": 1,
@@ -2924,4 +2930,6 @@
             "Love's fire heats water, water cools not love."
         ]
     }
-]
+];
+
+export default Sonnets;
