@@ -8,7 +8,7 @@ module.exports = env => {
         devtool: 'source-map',
         output: {
             path: resolve(__dirname, './dist'),
-            libraryTarget: 'commonjs',
+            libraryTarget: 'umd',
             filename: 'index.js'
         },
         resolve: {
