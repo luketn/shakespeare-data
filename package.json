@@ -5,17 +5,25 @@
   "main": "dist/index.js",
   "scripts": {
     "commit": "git-cz",
-    "test": "mocha test/index.test.js -w",
-    "test-single": "mocha test/index.test.js",
-    "build": "tsc",
+    "pretest": "npm run build",
+    "test": "mocha test/index.test.js",
+    "prebuild": "rimraf dist",
+    "build": "webpack",
+    "start": "webpack-dev-server",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
+  "files": [
+    "dist"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/luketn/shakespeare-data.git"
   },
   "keywords": [
-    "shakespeare"
+    "shakespeare",
+    "Lorem",
+    "Ipsum",
+    "Lorem Ipsum"
   ],
   "author": "Luke Thompson (http://mycodefu.com/)",
   "license": "Apache-2.0",
@@ -24,14 +32,19 @@
   },
   "homepage": "https://github.com/luketn/shakespeare-data#readme",
   "devDependencies": {
-    "babel": "6.23.0",
+    "awesome-typescript-loader": "3.1.2",
     "chai": "3.5.0",
     "commitizen": "2.9.6",
     "cz-conventional-changelog": "2.0.0",
+    "html-webpack-plugin": "2.28.0",
     "mocha": "3.2.0",
+    "rimraf": "2.6.1",
     "semantic-release": "6.3.2",
+    "source-map-loader": "0.2.1",
     "typescript": "2.2.2",
-    "underscore": "1.8.3"
+    "underscore": "1.8.3",
+    "webpack": "2.4.1",
+    "webpack-dev-server": "2.4.2"
   },
   "config": {
     "commitizen": {

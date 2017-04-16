@@ -1,9 +1,6 @@
-export interface Sonnet {
-    number:Number,
-    lines:String[]
-}
+import {Sonnet} from './sonnet';
 
-const Sonnets:Sonnet[] =
+export const SonnetData:Sonnet[] =
 [
     {
         "number": 1,
@@ -2931,5 +2928,3 @@ const Sonnets:Sonnet[] =
         ]
     }
 ];
-
-export default Sonnets;

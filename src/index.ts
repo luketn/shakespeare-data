@@ -1,5 +1,3 @@
-import Sonnets from './data/sonnets';
+import {Shakespeare} from './shakespeare';
 
-export = {
-    sonnets: new Sonnets()
-};
+export = new Shakespeare();

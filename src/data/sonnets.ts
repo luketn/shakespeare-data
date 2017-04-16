@@ -1,6 +1,6 @@
-import SonnetData from './sonnet-data';
+import {SonnetData} from './sonnet-data';
 
-export default class Sonnets {
+export class Sonnets {
 
     all = () => SonnetData;
 

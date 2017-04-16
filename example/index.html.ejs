@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title><%=htmlWebpackPlugin.options.title%></title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/systemjs/0.20.12/system.js"></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/react/15.3.1/react.js'></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/react/15.3.1/react-dom.js'></script>
@@ -26,15 +26,7 @@
     </div>
 
     <script>
-        System.config({
-            packages: {
-                'dist': {
-                    defaultExtension: 'js',
-                    main: 'index'
-                }
-            }
-        });
-        System.import('dist').then(function (shakespeare) {
+        System.import('./index.js').then(function (shakespeare) {
             'use strict';
 
             const e = React.createElement;

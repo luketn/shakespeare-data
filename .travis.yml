@@ -10,8 +10,7 @@ before_script:
   - npm prune
   - npm i -g typescript
 script:
-  - npm run build
-  - npm run test-single
+  - npm test
 after_success:
   - npm run semantic-release
 branches:
