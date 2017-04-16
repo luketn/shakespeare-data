@@ -39,4 +39,13 @@ describe('shakespeareData', function () {
             
         })
     })
+    describe('sonnets.random()', function () {
+        it('should return a single random sonnet', function () {
+            var sonnet = shakespeareData.sonnets.random();
+            expect(sonnet.number).to.be.a('number');
+            _.each(sonnet.lines, (line) => {
+                expect(line).to.be.a('string');
+            });
+        })
+    })
 });

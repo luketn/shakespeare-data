@@ -13,4 +13,9 @@ export class Sonnets {
             }
         );
     };
+
+    random = () => {
+        var randomElement = Math.floor(Math.random() * SonnetData.length);
+        return SonnetData[randomElement];
+    };
 }
