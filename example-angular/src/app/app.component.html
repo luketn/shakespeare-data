@@ -1,0 +1,31 @@
+<nav>
+  <div class="nav-wrapper">
+    <form>
+      <div class="input-field">
+        <input id="search" type="search" required (keyup)="search($event.target.value)">
+        <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+        <i class="material-icons">close</i>
+      </div>
+    </form>
+  </div>
+</nav>
+<div class="container">
+  <table class="bordered striped">
+    <thead>
+      <tr>
+        <th>Number</th>
+        <th>Sonnet</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let sonnet of sonnets">
+        <td>{{sonnet.number}}</td>
+        <td>
+          <span *ngFor="let line of sonnet.lines">
+            {{line}}<br/>
+          </span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
