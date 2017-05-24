@@ -67,3 +67,44 @@ System.import('./index.js').then(function (shakespeare) {
     ReactDOM.render(e('ul', null, sonnetItems), document.getElementById('root'));
 });
 ```
+
+## Use it in Angular
+Import it in angular by importing it into a component and binding it with an HTML template.
+
+Example: 
+[https://luketn.github.io/shakespeare-data/](https://luketn.github.io/shakespeare-data/)
+
+Code: [https://github.com/luketn/shakespeare-data/blob/master/example-angular/src/app/app.component.ts](https://github.com/luketn/shakespeare-data/blob/master/example-angular/src/app/app.component.ts)
+
+Component:
+
+```javascript
+import { Component } from '@angular/core';
+import * as Shakespeare from 'shakespeare-data';
+
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.scss']
+})
+export class AppComponent {
+  sonnets = Shakespeare.sonnets.all();
+  constructor() { }
+  search(term) {
+    this.sonnets = Shakespeare.sonnets.find(term);
+  }
+}
+```
+Template:
+```html
+<tbody>
+  <tr *ngFor="let sonnet of sonnets">
+    <td>{{sonnet.number}}</td>
+    <td>
+      <span *ngFor="let line of sonnet.lines">
+        {{line}}<br/>
+      </span>
+    </td>
+  </tr>
+</tbody>
+```
