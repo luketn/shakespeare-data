@@ -108,3 +108,21 @@ Template:
   </tr>
 </tbody>
 ```
+
+
+## Contributions
+If you'd like to contribute to the project, note that we use semantic versioning and commitizen conventions.
+
+These differentiate breaking and non-breaking changes clear, and update version numbers for changes accordingly.
+
+Commitizen:
+http://commitizen.github.io/cz-cli/
+
+Semantic Release: 
+https://semantic-release.gitbooks.io/semantic-release
+
+Use the package script 'commit' to perform commits, which will invoke commitizen correctly:
+```
+git add .
+npm run commit
+```
