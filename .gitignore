@@ -40,10 +40,7 @@ jspm_packages
 todo.txt
 
 # Javascript
-dist
 *.tgz
-*.js
-*.js.map
-*.d.ts
 lib
 launch.json
+src/**/*.js
