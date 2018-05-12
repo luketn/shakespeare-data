@@ -1,6 +1,6 @@
 {
     "compilerOptions": {
-        "outDir": "./dist",    
+        "outDir": "./lib",    
         "emitDecoratorMetadata": true,
         "experimentalDecorators": true,
         "moduleResolution": "node",

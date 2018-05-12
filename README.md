@@ -51,23 +51,6 @@ var shakespeare = require('shakespeare-data');
 var sonnetsContainingTruth = shakespeare.sonnets.find('truth');
 ```
 
-## Use it React
-If you're in the browser, import it with SystemJS and use it in your favourite JS framework.
-There's an example distributed with the library in dist/index.html.
-
-```javascript
-System.import('./index.js').then(function (shakespeare) {
-    const e = React.createElement;
-
-    const sonnetItems = shakespeare.sonnets.find('beauty').map((sonnet) => {
-        const lineItems = sonnet.lines.map((line) => e('li', null, line));
-        return e('li', null, e('h2', null, 'Sonnet #' + sonnet.number), e('ul', null, lineItems));
-    });
-
-    ReactDOM.render(e('ul', null, sonnetItems), document.getElementById('root'));
-});
-```
-
 ## Use it in Angular
 Import it in angular by importing it into a component and binding it with an HTML template.
 
@@ -80,7 +63,7 @@ Component:
 
 ```javascript
 import { Component } from '@angular/core';
-import * as Shakespeare from 'shakespeare-data';
+import { Shakespeare } from 'shakespeare-data/lib/shakespeare';
 
 @Component({
   selector: 'app-root',
@@ -88,10 +71,11 @@ import * as Shakespeare from 'shakespeare-data';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  sonnets = Shakespeare.sonnets.all();
-  constructor() { }
+  shakespeare = new Shakespeare();
+
+  sonnets = this.shakespeare.sonnets.all();
   search(term) {
-    this.sonnets = Shakespeare.sonnets.find(term);
+    this.sonnets = this.shakespeare.sonnets.find(term);
   }
 }
 ```

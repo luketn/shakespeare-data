@@ -1,14 +1,15 @@
-var expect = require('chai').expect;
-var shakespeareData = require('../dist/index');
-var _ = require('underscore');
+import {expect} from 'chai';
+import * as _ from 'underscore';
+import {Shakespeare} from './shakespeare';
 
 describe('shakespeareData', function () {
     describe('sonnets.all()', function () {
         it('should contain an array of sonnet objects', function () {
+            var shakespeareData = new Shakespeare();
             var sonnets = shakespeareData.sonnets.all();
             expect(sonnets instanceof Array).to.be.true;
 
-            for (i = 1; i < sonnets.length+1; i++) {
+            for (var i = 1; i < sonnets.length+1; i++) {
                 var sonnet = sonnets[i-1];
                 expect(sonnet instanceof Object).to.be.true;
                 expect(sonnet.number).to.equal(i);
@@ -21,6 +22,7 @@ describe('shakespeareData', function () {
     })
     describe('sonnets.find(term)', function () {
         it('should return an array of sonnets matching the term', function () {
+            var shakespeareData = new Shakespeare();
             var sonnets = shakespeareData.sonnets.find('truth');
             expect(sonnets instanceof Array).to.be.true;
             expect(sonnets.length > 0).to.be.true;
@@ -41,6 +43,7 @@ describe('shakespeareData', function () {
     })
     describe('sonnets.random()', function () {
         it('should return a single random sonnet', function () {
+            var shakespeareData = new Shakespeare();
             var sonnet = shakespeareData.sonnets.random();
             expect(sonnet.number).to.be.a('number');
             _.each(sonnet.lines, (line) => {

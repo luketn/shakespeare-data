@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import * as Shakespeare from 'shakespeare-data';
+import { Shakespeare } from 'shakespeare-data/lib/shakespeare';
 
 @Component({
   selector: 'app-root',
@@ -7,9 +7,10 @@ import * as Shakespeare from 'shakespeare-data';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  sonnets = Shakespeare.sonnets.all();
-  constructor() { }
+  shakespeare = new Shakespeare();
+
+  sonnets = this.shakespeare.sonnets.all();
   search(term) {
-    this.sonnets = Shakespeare.sonnets.find(term);
+    this.sonnets = this.shakespeare.sonnets.find(term);
   }
 }

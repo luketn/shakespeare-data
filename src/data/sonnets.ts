@@ -1,3 +1,4 @@
+import {Sonnet} from './sonnet';
 import {SonnetData} from './sonnet-data';
 
 export class Sonnets {

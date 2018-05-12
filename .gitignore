@@ -42,3 +42,8 @@ todo.txt
 # Javascript
 dist
 *.tgz
+*.js
+*.js.map
+*.d.ts
+lib
+launch.json
