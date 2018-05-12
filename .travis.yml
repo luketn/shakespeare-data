@@ -11,7 +11,7 @@ before_script:
 script:
   - npm test
 after_success:
-  - npm run semantic-release
+  - npx semantic-release
 branches:
   except:
     - /^v\d+\.\d+\.\d+$/

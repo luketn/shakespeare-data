@@ -8,8 +8,7 @@
     "pretest": "npm run build",
     "test": "mocha lib/shakespeare.test.js",
     "prebuild": "rimraf lib",
-    "build": "tsc",
-    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
+    "build": "tsc"
   },
   "files": [
     "lib"
